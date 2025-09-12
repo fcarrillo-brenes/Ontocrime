@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/ontology2#"
+     xml:base="http://localhost/ontology2"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cube="http://purl.org/linked-data/cube#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:qb4st="http://www.w3.org/ns/qb4st/"
+     xmlns:terms="http://open.vocab.org/terms/"
+     xmlns:terms1="http://purl.org/dc/terms/"
+     xmlns:ontology="http://dbpedia.org/ontology/"
+     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:PopulatedPlace="http://dbpedia.org/ontology/PopulatedPlace/">
+    <owl:Ontology rdf:about="http://localhost/ontology2"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/municipality -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/municipality">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Alcaldia"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/place -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/place">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/populationPlace -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/populationPlace">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#AGEBOcurrencia -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#AGEBOcurrencia">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#AGEB"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#alcaldiaOcurrencia -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#alcaldiaOcurrencia">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Alcaldia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#calleOcurrencia -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#calleOcurrencia">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Calle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#coloniaOcurrencia -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#coloniaOcurrencia">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Denuncia"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Colonia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#contiene -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#contiene">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Denuncia"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Delito"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#descritapor -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#descritapor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#GeoShape"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#genero -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#genero">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Genero"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#ocurrioEn -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#ocurrioEn">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#seInicio -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#seInicio">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Denuncia"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#FechaInicio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#sucedio -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#sucedio">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Fechahechos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#tieneAgencia -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tieneAgencia">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Agency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#tieneCategoria -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tieneCategoria">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Categoria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#tieneaIndices -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tieneaIndices">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Rezago"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/ontology2#tienegeopoint -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tienegeopoint">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Geopoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Fechahechos"/>
+        <rdfs:domain rdf:resource="http://localhost/ontology2#GeoShape"/>
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Geopoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:range rdf:resource="http://localhost/ontology2#GeoShape"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Geopoint"/>
+        <rdfs:range rdf:resource="http://localhost/ontology2#Delito"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/ontology2#analfabetismo -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#analfabetismo">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#edad -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#edad">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#educacionIncompleta -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#educacionIncompleta">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#habitantes -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#habitantes">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#idAGEB -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#idAGEB">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#AGEB"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#noAsisteaescuela -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#noAsisteaescuela">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#pobreza -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#pobreza">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#AGEB"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#sinserviciossalud -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#sinserviciossalud">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#tieneAño -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#tieneAño">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#tieneFecha -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#tieneFecha">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/ontology2#viviendassinserv -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#viviendassinserv">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/tsn#hasGeometry -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/tsn#hasGeometry">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#AGEB"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Locality -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Locality">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Place -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Place"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PopulatedPlace -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/PopulatedPlace">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Region -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Region">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Street -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Street">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#AGEB -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#AGEB">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Agency -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Agency"/>
+    
+
+
+    <!-- http://localhost/ontology2#Alcaldia -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Alcaldia">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Añohechos -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Añohechos">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#Fechahechos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Añoinicio -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Añoinicio">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#FechaInicio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Calle -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Calle">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Categoria -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Categoria"/>
+    
+
+
+    <!-- http://localhost/ontology2#Colonia -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Colonia">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Delito -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Delito"/>
+    
+
+
+    <!-- http://localhost/ontology2#Denuncia -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Denuncia"/>
+    
+
+
+    <!-- http://localhost/ontology2#FechaInicio -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#FechaInicio"/>
+    
+
+
+    <!-- http://localhost/ontology2#Fechahechos -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Fechahechos"/>
+    
+
+
+    <!-- http://localhost/ontology2#Genero -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Genero"/>
+    
+
+
+    <!-- http://localhost/ontology2#GeoShape -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#GeoShape"/>
+    
+
+
+    <!-- http://localhost/ontology2#Geopoint -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Geopoint"/>
+    
+
+
+    <!-- http://localhost/ontology2#Horahechos -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Horahechos">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#Fechahechos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Horainicio -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Horainicio">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#FechaInicio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Meshechos -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Meshechos">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#Fechahechos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Mesinicio -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Mesinicio">
+        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#FechaInicio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/ontology2#Rezago -->
+
+    <owl:Class rdf:about="http://localhost/ontology2#Rezago"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/ontology2#Violencia_familiar -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/ontology2#Violencia_familiar"/>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Street"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
