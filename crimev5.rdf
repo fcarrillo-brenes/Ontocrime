@@ -1,24 +1,32 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://localhost/ontology2#"
-     xml:base="http://localhost/ontology2"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
+<rdf:RDF xmlns="https://w3id.org/Ontocrime#"
+     xml:base="https://w3id.org/Ontocrime"
+     xmlns:ns2="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:cube="http://purl.org/linked-data/cube#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:prov="http://www.w3.org/ns/prov#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:qb4st="http://www.w3.org/ns/qb4st/"
-     xmlns:terms="http://open.vocab.org/terms/"
-     xmlns:terms1="http://purl.org/dc/terms/"
-     xmlns:ontology="http://dbpedia.org/ontology/"
-     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
-     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:PopulatedPlace="http://dbpedia.org/ontology/PopulatedPlace/">
-    <owl:Ontology rdf:about="http://localhost/ontology2"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://w3id.org/Ontocrime">
+        <ns2:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
@@ -36,8 +44,12 @@
     <!-- http://dbpedia.org/ontology/municipality -->
 
     <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/municipality">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Alcaldia"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Borough"/>
         <rdfs:range rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:comment xml:lang="en">Property that indicates the municipality to which a place or event belongs.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica el municipio al que pertenece un lugar o evento.</rdfs:comment>
+        <rdfs:label xml:lang="en">Municipality</rdfs:label>
+        <rdfs:label xml:lang="es">municipality</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -47,6 +59,10 @@
     <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/place">
         <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
         <rdfs:range rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:comment xml:lang="en">Property that indicates the place where an event occurs or an object is located.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica el lugar donde ocurre un evento o se encuentra un objeto.</rdfs:comment>
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+        <rdfs:label xml:lang="es">place</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -56,133 +72,10 @@
     <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/populationPlace">
         <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
         <rdfs:range rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#AGEBOcurrencia -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#AGEBOcurrencia">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#AGEB"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#alcaldiaOcurrencia -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#alcaldiaOcurrencia">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Alcaldia"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#calleOcurrencia -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#calleOcurrencia">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Calle"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#coloniaOcurrencia -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#coloniaOcurrencia">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Denuncia"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Colonia"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#contiene -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#contiene">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Denuncia"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Delito"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#descritapor -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#descritapor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#GeoShape"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#genero -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#genero">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Genero"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#ocurrioEn -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#ocurrioEn">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Place"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#seInicio -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#seInicio">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Denuncia"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#FechaInicio"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#sucedio -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#sucedio">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Fechahechos"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#tieneAgencia -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tieneAgencia">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Agency"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#tieneCategoria -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tieneCategoria">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Categoria"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#tieneaIndices -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tieneaIndices">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Rezago"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://localhost/ontology2#tienegeopoint -->
-
-    <owl:ObjectProperty rdf:about="http://localhost/ontology2#tienegeopoint">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Geopoint"/>
+        <rdfs:comment xml:lang="en">Propiedad que indica la población o número de habitantes de un lugar.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Property that indicates the population or number of inhabitants of a place.</rdfs:comment>
+        <rdfs:label xml:lang="en">Population Place</rdfs:label>
+        <rdfs:label xml:lang="es">Población de un lugar</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -190,10 +83,14 @@
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Fechahechos"/>
-        <rdfs:domain rdf:resource="http://localhost/ontology2#GeoShape"/>
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Geopoint"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#CrimeDate"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#GeoShape"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Geopoint"/>
+        <rdfs:comment xml:lang="en">RDF property indicating the class to which a resource belongs in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad RDF que indica la clase a la que pertenece un recurso en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Type</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -201,7 +98,7 @@
     <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
 
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
-        <rdfs:range rdf:resource="http://localhost/ontology2#GeoShape"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#GeoShape"/>
     </rdf:Description>
     
 
@@ -209,8 +106,195 @@
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Geopoint"/>
-        <rdfs:range rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Geopoint"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:comment xml:lang="en">Property that indicates the geographic location of a resource using WGS84 coordinates.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica la ubicación geográfica de un recurso usando coordenadas WGS84.</rdfs:comment>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+        <rdfs:label xml:lang="es">location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#agebOccurrence -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#agebOccurrence">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#AGEB"/>
+        <rdfs:comment xml:lang="en">Property indicating the AGEB where a crime occurred in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica el AGEB donde ocurrió un delito en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="es">área micro-estadística de ocurrencia</rdfs:label>
+        <rdfs:label xml:lang="en">Occurrence micro-statistical zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#boroughOccurrence -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#boroughOccurrence">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Borough"/>
+        <rdfs:comment xml:lang="en">Property indicating the borough where a crime occurred in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica la alcaldía donde ocurrió un delito en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Occurrence borough</rdfs:label>
+        <rdfs:label xml:lang="es">Alcaldia de ocurrencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#neighborhoodOccurrence -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#neighborhoodOccurrence">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Report"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Neighborhood"/>
+        <rdfs:comment xml:lang="en">Property indicating the neighborhood where a crime occurred in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica la colonia donde ocurrió un delito en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Occurrence neighborhood</rdfs:label>
+        <rdfs:label xml:lang="es">Colonia de ocurrencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#contains -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#contains">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Report"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:comment xml:lang="en">Property indicating that a report contains a crime.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica que un reporte contiene un delito.</rdfs:comment>
+        <rdfs:label xml:lang="en">Contains crime</rdfs:label>
+        <rdfs:label xml:lang="es">Contiene delito</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#describedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#describedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#GeoShape"/>
+        <rdfs:comment xml:lang="en">Property indicating that a place is described by a geometry in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica que un lugar está descrito por una geometría en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Described by geoshape</rdfs:label>
+        <rdfs:label xml:lang="es">Descrita por geoshape</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#victimGender -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#victimGender">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Gender"/>
+        <rdfs:comment xml:lang="en">Property indicating the gender of the victim in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica el género de la víctima en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Victim Gender</rdfs:label>
+        <rdfs:label xml:lang="es">Género de la víctima</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#occurrenceStreet -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#occurrenceStreet">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Street"/>
+        <rdfs:comment xml:lang="en">Property that represents the street where a crime occurred.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que representa la calle donde ocurrió un delito.</rdfs:comment>
+        <rdfs:label xml:lang="en">Calle de ocurrencia</rdfs:label>
+        <rdfs:label xml:lang="es">Occurrence street</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#occurredIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#occurredIn">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:comment xml:lang="en">Property indicating the place where a crime occurred in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica el lugar donde ocurrió un delito en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Occurred In</rdfs:label>
+        <rdfs:label xml:lang="es">Ocurrió en</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#investigationStart -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#investigationStart">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Report"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#InvestigationStartDate"/>
+        <rdfs:comment xml:lang="en">Property indicating the date when a crime investigation starts.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que indica la fecha en que se inicia la investigación de un delito.</rdfs:comment>
+        <rdfs:label xml:lang="en">Investigation Start</rdfs:label>
+        <rdfs:label xml:lang="es">Inicio de la investigación</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#happenedOn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#happenedOn">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#CrimeDate"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa la fecha en que sucedió un delito en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property that represents the date when a crime happened in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">sucedió en</rdfs:label>
+    	<rdfs:label xml:lang="en">happened on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#hasAgency -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#hasAgency">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Agency"/>
+        <rdfs:comment xml:lang="es">Propiedad que conecta un delito con la agencia encargada de su investigación en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property that links a crime to the agency in charge of its investigation in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">tiene agencia</rdfs:label>
+    	<rdfs:label xml:lang="en">has agency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#hasCrimeCategory -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#hasCrimeCategory">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#CrimeCategory"/>
+        <rdfs:comment xml:lang="es">Propiedad que asigna la categoría oficial de un delito según la fiscalía en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property that assigns the official crime category according to the prosecution in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">tiene categoría</rdfs:label>
+    	<rdfs:label xml:lang="en">has crime category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#hasSocialLag -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#hasSocialLag">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#SocialLag"/>
+        <rdfs:comment xml:lang="es">Propiedad que vincula un lugar con sus índices de rezago social en un contexto criminológico o socioeconómico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property linking a place to its social lag indices in a criminological or socioeconomic context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">tiene índices de rezago social</rdfs:label>
+    	<rdfs:label xml:lang="en">has social lag</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#hasGeoPoint -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/Ontocrime#hasGeoPoint">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/Ontocrime#Geopoint"/>
+        <rdfs:comment xml:lang="es">Propiedad que vincula un delito con su punto geográfico de ocurrencia en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property linking a crime to its geographic point of occurrence in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">tiene punto geográfico</rdfs:label>
+    	<rdfs:label xml:lang="en">has GeoPoint</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -226,110 +310,15 @@
     
 
 
-    <!-- http://localhost/ontology2#analfabetismo -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#analfabetismo">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#edad -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#edad">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#educacionIncompleta -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#educacionIncompleta">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#habitantes -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#habitantes">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#idAGEB -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#idAGEB">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#AGEB"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#noAsisteaescuela -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#noAsisteaescuela">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#pobreza -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#pobreza">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#AGEB"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#sinserviciossalud -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#sinserviciossalud">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#tieneAño -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#tieneAño">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#tieneFecha -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#tieneFecha">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://localhost/ontology2#viviendassinserv -->
-
-    <owl:DatatypeProperty rdf:about="http://localhost/ontology2#viviendassinserv">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://purl.org/net/tsn#hasGeometry -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/net/tsn#hasGeometry">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#AGEB"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#AGEB"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Property representing has geometry in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que representa hasgeometry en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Geometry</rdfs:label>
+        <rdfs:label xml:lang="es">hasGeometry</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -337,8 +326,12 @@
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Property representing lat in a criminological context.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que representa lat en un contexto criminológico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lat</rdfs:label>
+        <rdfs:label xml:lang="es">lat</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -346,8 +339,155 @@
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
-        <rdfs:domain rdf:resource="http://localhost/ontology2#Delito"/>
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Property representing crime&apos;s occurrence longitude</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que representa la longitud de ocurrencia del delito</rdfs:comment>
+        <rdfs:label xml:lang="es">Longitud</rdfs:label>
+        <rdfs:label xml:lang="en">Longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#illiteracyRate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#illiteracyRate">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa el porcentaje de analfabetismo en un lugar en un contexto criminológico o socioeconómico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the illiteracy rate of a place in a criminological or socioeconomic context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">analfabetismo</rdfs:label>
+    	<rdfs:label xml:lang="en">Illiteracy Rate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#doesNotAttendSchool -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#doesNotAttendSchool">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Property that represents the number of people who do not attend school within a region.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Propiedad que representa la cantidad de personas que no asisten a la escuela dentro de una región.</rdfs:comment>
+        <rdfs:label xml:lang="es">Does not attend school</rdfs:label>
+        <rdfs:label xml:lang="en">No asiste a la escuela</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#victimsAge -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#victimsAge">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Propiedad que indica la edad de la víctima del delito.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Property that indicates the age of the crime victim.</rdfs:comment>
+        <rdfs:label xml:lang="en">Victim's age</rdfs:label>
+        <rdfs:label xml:lang="es">Edad de victima</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#incompleteEducation -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#incompleteEducation">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa el porcentaje de personas con educación incompleta en un lugar en un contexto criminológico o socioeconómico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the percentage of people with incomplete education in a place in a criminological or socioeconomic context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">educación incompleta</rdfs:label>
+    	<rdfs:label xml:lang="en">Incomplete Education Rate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#idAGEB -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#idAGEB">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#AGEB"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa el identificador del AGEB (Área Geoestadística Básica) en un contexto criminológico o geográfico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the identifier of the AGEB (Basic Geo-statistical Area) in a criminological or geographic context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">id AGEB</rdfs:label>
+    	<rdfs:label xml:lang="en">AGEB Id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#inhabitants -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#inhabitants">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Number of inhabitants in the area.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Número de habitantes que tiene el área.</rdfs:comment>
+        <rdfs:label xml:lang="es">Habitantes</rdfs:label>
+        <rdfs:label xml:lang="en">Inhabitants</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#povertyRate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#povertyRate">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#AGEB"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa el porcentaje de pobreza en un AGEB en un contexto criminológico o socioeconómico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the poverty rate of an AGEB in a criminological or socioeconomic context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">pobreza</rdfs:label>
+    	<rdfs:label xml:lang="en">Poverty Rate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#noHealthServices -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#noHealthServices">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa el porcentaje de población sin acceso a servicios de salud en un lugar en un contexto criminológico o socioeconómico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the percentage of the population without access to health services in a place in a criminological or socioeconomic context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">sin servicios de salud</rdfs:label>
+    	<rdfs:label xml:lang="en">No Health Services Rate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#crimeYear -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#crimeYear">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa el año en que ocurrió un delito en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the year a crime occurred in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">año del delito</rdfs:label>
+    	<rdfs:label xml:lang="en">Crime Year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#crimeDateTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#crimeDateTime">
+        <rdfs:domain rdf:resource="https://w3id.org/Ontocrime#Crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa la fecha y hora en que ocurrió un delito en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the date and time a crime occurred in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">fecha del delito</rdfs:label>
+    	<rdfs:label xml:lang="en">Crime DateTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#housingWithoutServices -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/Ontocrime#housingWithoutServices">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="es">Propiedad que representa el porcentaje de viviendas sin servicios básicos en un lugar en un contexto criminológico o socioeconómico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Property representing the percentage of households without basic services in a place in a criminological or socioeconomic context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">viviendas sin servicios</rdfs:label>
+    	<rdfs:label xml:lang="en">Housing Without Services Rate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -366,14 +506,24 @@
     <!-- http://dbpedia.org/ontology/Locality -->
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Locality">
+        <owl:equivalentClass rdf:resource="https://w3id.org/Ontocrime#Neighborhood"/>
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:comment xml:lang="es">Clase que representa locality en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing locality in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Locality</rdfs:label>
+        <rdfs:label xml:lang="es">Locality</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://dbpedia.org/ontology/Place -->
 
-    <owl:Class rdf:about="http://dbpedia.org/ontology/Place"/>
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Place">
+        <rdfs:comment xml:lang="es">Clase que representa place en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing place in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+        <rdfs:label xml:lang="es">Place</rdfs:label>
+    </owl:Class>
     
 
 
@@ -381,6 +531,10 @@
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/PopulatedPlace">
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:comment xml:lang="es">Clase que representa populatedplace en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing populated place in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Populated Place</rdfs:label>
+        <rdfs:label xml:lang="es">PopulatedPlace</rdfs:label>
     </owl:Class>
     
 
@@ -388,7 +542,12 @@
     <!-- http://dbpedia.org/ontology/Region -->
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Region">
+        <owl:equivalentClass rdf:resource="https://w3id.org/Ontocrime#Neighborhood"/>
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:comment xml:lang="es">Clase que representa region en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing region in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Region</rdfs:label>
+        <rdfs:label xml:lang="es">Region</rdfs:label>
     </owl:Class>
     
 
@@ -396,148 +555,247 @@
     <!-- http://dbpedia.org/ontology/Street -->
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Street">
+        <owl:equivalentClass rdf:resource="https://w3id.org/Ontocrime#Street"/>
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:comment xml:lang="es">Clase que representa street en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing street in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Street</rdfs:label>
+        <rdfs:label xml:lang="es">Street</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#AGEB -->
+    <!-- https://w3id.org/Ontocrime#AGEB -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#AGEB">
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#AGEB">
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:comment xml:lang="es">Clase que representa ageb en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing ageb in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">AGEB</rdfs:label>
+        <rdfs:label xml:lang="es">AGEB</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Agency -->
+    <!-- https://w3id.org/Ontocrime#Agency -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Agency"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Agency">
+        <rdfs:comment xml:lang="es">Clase que representa agency en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing agency in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agency</rdfs:label>
+        <rdfs:label xml:lang="es">Agency</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Alcaldia -->
+    <!-- https://w3id.org/Ontocrime#Borough -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Alcaldia">
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Borough">
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/Ontocrime#Street"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/Ontocrime#Neighborhood"/>
+        <rdfs:comment xml:lang="es">Clase que representa alcaldia en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing borough in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="es">Alcaldia</rdfs:label>
+        <rdfs:label xml:lang="en">Borough</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Añohechos -->
+    <!-- https://w3id.org/Ontocrime#CrimeYear -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Añohechos">
-        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#Fechahechos"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#CrimeYear">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/Ontocrime#CrimeDate"/>
+        <rdfs:comment xml:lang="es">Clase que representa el año en que ocurrieron los hechos en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing the year when the crime occurred in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="es">Año de los hechos</rdfs:label>
+    	<rdfs:label xml:lang="en">Crime Year</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Añoinicio -->
+    <!-- https://w3id.org/Ontocrime#InvestigationStartYear -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Añoinicio">
-        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#FechaInicio"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#InvestigationStartYear">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/Ontocrime#InvestigationStartDate"/>
+        <rdfs:comment xml:lang="es">Clase que representa el año en que se inició la investigación de un delito.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing the year when the crime investigation started.</rdfs:comment>
+    	<rdfs:label xml:lang="es">Año de inicio de la investigación</rdfs:label>
+    	<rdfs:label xml:lang="en">Investigation Start Year</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Calle -->
+    <!-- https://w3id.org/Ontocrime#Street -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Calle">
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Street">
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/Ontocrime#Neighborhood"/>
+        <rdfs:comment xml:lang="es">Clase que representa calle en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing street in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="es">Calle</rdfs:label>
+        <rdfs:label xml:lang="en">Street</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Categoria -->
+    <!-- https://w3id.org/Ontocrime#CrimeCategory -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Categoria"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#CrimeCategory">
+        <rdfs:comment xml:lang="es">Clase que representa la categoría oficial del delito según la clasificación de la fiscalía en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing the official crime category according to the prosecution’s classification in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="en">Crime Category</rdfs:label>
+    	<rdfs:label xml:lang="es">Categoría del delito</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Colonia -->
+    <!-- https://w3id.org/Ontocrime#Neighborhood -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Colonia">
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Neighborhood">
         <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:comment xml:lang="es">Clase que representa colonia en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing neighborhood in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="es">Colonia</rdfs:label>
+        <rdfs:label xml:lang="en">Neighborhood</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Delito -->
+    <!-- https://w3id.org/Ontocrime#Crime -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Delito"/>
-    
-
-
-    <!-- http://localhost/ontology2#Denuncia -->
-
-    <owl:Class rdf:about="http://localhost/ontology2#Denuncia"/>
-    
-
-
-    <!-- http://localhost/ontology2#FechaInicio -->
-
-    <owl:Class rdf:about="http://localhost/ontology2#FechaInicio"/>
-    
-
-
-    <!-- http://localhost/ontology2#Fechahechos -->
-
-    <owl:Class rdf:about="http://localhost/ontology2#Fechahechos"/>
-    
-
-
-    <!-- http://localhost/ontology2#Genero -->
-
-    <owl:Class rdf:about="http://localhost/ontology2#Genero"/>
-    
-
-
-    <!-- http://localhost/ontology2#GeoShape -->
-
-    <owl:Class rdf:about="http://localhost/ontology2#GeoShape"/>
-    
-
-
-    <!-- http://localhost/ontology2#Geopoint -->
-
-    <owl:Class rdf:about="http://localhost/ontology2#Geopoint"/>
-    
-
-
-    <!-- http://localhost/ontology2#Horahechos -->
-
-    <owl:Class rdf:about="http://localhost/ontology2#Horahechos">
-        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#Fechahechos"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Crime">
+        <owl:disjointWith rdf:resource="https://w3id.org/Ontocrime#Report"/>
+        <rdfs:comment xml:lang="es">Clase que representa Crime en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing crime in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Crime</rdfs:label>
+        <rdfs:label xml:lang="es">Crime</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Horainicio -->
+    <!-- https://w3id.org/Ontocrime#InvestigationStartDate -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Horainicio">
-        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#FechaInicio"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#InvestigationStartDate">
+        <rdfs:comment xml:lang="es">Clase que representa fechainicio en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing fecha inicio in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fecha Inicio</rdfs:label>
+        <rdfs:label xml:lang="es">FechaInicio</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Meshechos -->
+    <!-- https://w3id.org/Ontocrime#CrimeDate -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Meshechos">
-        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#Fechahechos"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#CrimeDate">
+        <rdfs:comment xml:lang="es">Clase que representa la fecha en que ocurrieron los hechos de un delito.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing the date when the events of a crime occurred.</rdfs:comment>
+ 	<rdfs:label xml:lang="en">Crime Date</rdfs:label>
+    	<rdfs:label xml:lang="es">Fecha del delito</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Mesinicio -->
+    <!-- https://w3id.org/Ontocrime#Gender -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Mesinicio">
-        <rdfs:subClassOf rdf:resource="http://localhost/ontology2#FechaInicio"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Gender">
+        <rdfs:comment xml:lang="es">Clase que representa genero en un contexto criminológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing gender in a criminological context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gender</rdfs:label>
+        <rdfs:label xml:lang="es">Genero</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://localhost/ontology2#Rezago -->
+    <!-- https://w3id.org/Ontocrime#GeoShape -->
 
-    <owl:Class rdf:about="http://localhost/ontology2#Rezago"/>
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#GeoShape">
+        <rdfs:comment xml:lang="es">Clase que representa la geometría de un objeto geográfico en formato shapefile.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing the geometry of a geographic object in shapefile format.</rdfs:comment>
+        <rdfs:label xml:lang="en">Geo Shape</rdfs:label>
+        <rdfs:label xml:lang="es">GeoShape</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#Geopoint -->
+
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Geopoint">
+        <rdfs:comment xml:lang="es">Clase que representa el punto geográfico donde ocurrió un delito, con coordenadas de latitud y longitud.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing the geographic point where a crime occurred, with latitude and longitude coordinates..</rdfs:comment>
+        <rdfs:label xml:lang="en">Geopoint</rdfs:label>
+        <rdfs:label xml:lang="es">Geopoint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#CrimeTime -->
+
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#CrimeTime">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/Ontocrime#CrimeDate"/>
+    	<rdfs:comment xml:lang="es">Clase que representa la hora en que ocurrieron los hechos de un delito.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing the time when the events of a crime occurred.</rdfs:comment>
+    	<rdfs:label xml:lang="en">Crime Time</rdfs:label>
+    	<rdfs:label xml:lang="es">Hora del delito</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#InvestigationStartTime -->
+
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#InvestigationStartTime">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/Ontocrime#InvestigationStartDate"/>
+        <rdfs:comment xml:lang="es">Clase que representa la hora en que se inicia la investigación de un delito.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing the time when a crime investigation starts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hora de inicio de la investigación</rdfs:label>
+        <rdfs:label xml:lang="es">Investigation's start time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#CrimeMonth -->
+
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#CrimeMonth">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/Ontocrime#CrimeDate"/>
+        <rdfs:comment xml:lang="es">Clase que representa el mes en que ocurrieron los hechos en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing the month when the crime occurred in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="en">Crime Month</rdfs:label>
+    	<rdfs:label xml:lang="es">Mes de hechos</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#StartMonth -->
+
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#StartMonth">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/Ontocrime#InvestigationStartDate"/>
+        <rdfs:comment xml:lang="es">Clase que representa el mes de inicio de una investigación en un contexto criminológico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing the start month of an investigation in a criminological context.</rdfs:comment>
+    	<rdfs:label xml:lang="en">Start Month</rdfs:label>
+    	<rdfs:label xml:lang="es">Mes de inicio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#Report -->
+
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#Report">
+        <rdfs:comment xml:lang="es">Clase que representa la denuncia de un delito realizada por las víctimas.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class representing a crime report made by the victims.</rdfs:comment>
+        <rdfs:label xml:lang="es">Denuncia</rdfs:label>
+        <rdfs:label xml:lang="en">Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/Ontocrime#SocialLag -->
+
+    <owl:Class rdf:about="https://w3id.org/Ontocrime#SocialLag">
+        <rdfs:comment xml:lang="es">Clase que representa rezago social en un contexto criminológico o socioeconómico.</rdfs:comment>
+    	<rdfs:comment xml:lang="en">Class representing social lag in a criminological or socioeconomic context.</rdfs:comment>
+	<rdfs:label xml:lang="en">Social Lag</rdfs:label>
+    	<rdfs:label xml:lang="es">Rezago social</rdfs:label>
+    </owl:Class>
     
 
 
@@ -552,9 +810,9 @@
     
 
 
-    <!-- http://localhost/ontology2#Violencia_familiar -->
+    <!-- https://w3id.org/Ontocrime#Violencia_familiar -->
 
-    <owl:NamedIndividual rdf:about="http://localhost/ontology2#Violencia_familiar"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/Ontocrime#Violencia_familiar"/>
     <rdf:Description>
         <rdf:type rdf:resource="http://dbpedia.org/ontology/Street"/>
     </rdf:Description>
